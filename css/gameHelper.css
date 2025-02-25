@@ -1,0 +1,37 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: Caudex, Garamond, serif;
+}
+
+form h2 {
+    font-family: Caudex, Garamond, serif;
+}
+
+form {
+    font-family: Neuton, Garamond, serif;
+    font-size: 18px;
+    border-radius: 25px;
+    padding-left: 10px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgb(112, 146, 177, 0.5);
+    width: 50%;
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+}
+
+.rules {
+    background-color: rgba(255, 255, 255, 0.5);
+    
+}
