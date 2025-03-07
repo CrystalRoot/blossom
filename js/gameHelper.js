@@ -1,4 +1,6 @@
-const TEST_ARRAY = ["Blaze", "Craft", "Flake", "Grasp", "Quirk", "Jolly", "Twist", "Shore", "Crave", "Plume"]
+const TEST_ARRAY = ["ladder", "dealer", "leader", "read", "red", "quark"]
+
+const lettersValue = ["a", "l", "d", "e", "r"];
 
 document.getElementById("wordSearchForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -20,6 +22,30 @@ function createArray(lettersValue, middleValue, bonusValue) {
         console.log("My array did not contain " + bonusValue + ". My new array contains " + lettersValue);
     } else {
         console.log("All values already in the array.");
+    };
+};
+
+function testingConcept(lettersValue) {
+    let goodArray = [];
+    for (const word of TEST_ARRAY) {
+        console.log("This word is " + word);
+        let allLettersValid = true; // Flag to track if all letters are in lettersValue
+        for (const letter of word) {
+            if (!lettersValue.includes(letter)) {
+                allLettersValid = false; // If any letter is not valid, set flag to false
+                break;
+            };
+        };
+        if (allLettersValid) {
+            goodArray.push(word);
+            console.log(goodArray);
+        };
+        // if (word.includes(!lettersValue.includes)) {
+        //     continue;
+        // } else {
+        //     goodArray.push(word);
+        //     console.log(goodArray);
+        // }
     };
 };
 

@@ -1,0 +1,28 @@
+{
+  "name": "blossomgameproject",
+  "version": "1.0.0",
+  "main": "index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrystalRoot/blossom.git"
+  },
+  "author": "Crystal Root",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrystalRoot/blossom/issues"
+  },
+  "homepage": "https://github.com/CrystalRoot/blossom#readme",
+  "description": "Project to create a helper for players of the online word game Blossom.",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
