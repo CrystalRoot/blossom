@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/gameHelper.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caudex">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
-        <title>Blossom Game Helper</title>
-    </head>
-    <body>
-        <h1>Blossom Game Helper</h1>
-        <p>This site is meant to assist players of Merriam-Webster's <a href="https://www.merriam-webster.com/games/blossom-word-game">Blossom</a> daily word game select the best words possible to maximize their scores without automating the entire process.</p>
-        <div class="rules">
-            <h2>Rules</h2>
-            <ol>
-                <li>Words must include at least four letters.</li>
-                <li>Words must use the center letter.</li>
-                <li>Words may use the same letter more than once.</li>
-                <li>No proper nouns, hyphenated words, or foul language.</li>
+<head>
+    <meta charset="utf-8">
+    <!--Initializes optimization for breakpoints-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caudex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
+    <!--Custom stylesheet should always be last-->
+    <link rel="stylesheet" href="css/gameHelper.css">
+    <title>Blossom Game Helper</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Blossom Game Helper</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>This site is meant to assist players of Merriam-Webster's <a href="https://www.merriam-webster.com/games/blossom-word-game">Blossom</a> daily word game select the best words possible to maximize their scores without automating the entire process.</p>
+                </div>
+            </div>
         </div>
-        </ol>
-        <h2>Scoring</h2>
-        <ol>
-            <li>Four-letter words = 2 points.</li>
-            <li>Five-letter words = 4 points.</li>
-            <li>Six-letter words = 6 points.</li>
-            <li>Seven-letter words = 12 points.</li>
-            <li>Each additional letter = +3 points.</li>
-            <li>The petal outlined in yellow (which changes with every word played) contains a bonus letter. Bonus letter = +5 points per use.</li>
-            <li>Pangrams (words which contain all 7 letters) = +7 points.</li>
-        </ol>
-        <form id="wordSearchForm">
-            <h2>Blossom Word Search</h2>
-            <div class="directions" id="directions">
-                <p>Input today's letters, including the required middle letter and the bonus letter.</p>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Rules</h2>
+                <ol>
+                    <li>Words must include at least four letters.</li>
+                    <li>Words must use the center letter.</li>
+                    <li>Words may use the same letter more than once.</li>
+                    <li>No proper nouns, hyphenated words, or foul language.</li>
+                </ol>
             </div>
-            <div>
-                <label for="letters">Today's Letters:</label>
-                <input type="text" id="letters" name="letters" required minlength="7" maxlength="7" size="7">
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Scoring</h2>
+                <ol>
+                    <li>Four-letter words = 2 points.</li>
+                    <li>Five-letter words = 4 points.</li>
+                    <li>Six-letter words = 6 points.</li>
+                    <li>Seven-letter words = 12 points.</li>
+                    <li>Each additional letter = +3 points.</li>
+                    <li>The petal outlined in yellow (which changes with every word played) contains a bonus letter. Bonus letter = +5 points per use.</li>
+                    <li>Pangrams (words which contain all 7 letters) = +7 points.</li>
+                </ol>
             </div>
-            <div>
-                <label for="middle">Middle Letter:</label>
-                <input type="text" id="middle" name="middle" required maxlength="1" minlength="1" size="1">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form id="wordSearchForm">
+                    <h2>Blossom Word Search</h2>
+                    <div class="directions" id="directions">
+                        <p>Input today's letters, including the required middle letter and the bonus letter.</p>
+                    </div>
+                    <div>
+                        <label for="letters">Today's Letters:</label>
+                        <input type="text" id="letters" name="letters" required minlength="7" maxlength="7" size="7">
+                    </div>
+                    <div>
+                        <label for="middle">Middle Letter:</label>
+                        <input type="text" id="middle" name="middle" required maxlength="1" minlength="1" size="1">
+                    </div>
+                    <div>
+                        <label for="bonus">Bonus Letter:</label>
+                        <input type="text" id="bonus" name="bonus" required maxlength="1" minlength="1" size="1">
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <label for="bonus">Bonus Letter:</label>
-                <input type="text" id="bonus" name="bonus" required maxlength="1" minlength="1" size="1">
-            </div>
-            <div>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <script src="js/gameHelper.js"></script>
-    </body>
+        </div>
+    </div>
+    <!--Explanation of order here?-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/gameHelper.js"></script>
+</body>
 </html>
