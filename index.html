@@ -4,15 +4,17 @@
     <meta charset="utf-8">
     <!--Initializes optimization for breakpoints-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Correct order: fonts -> general -> specific -> custom-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caudex|Neuton">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caudex">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
-    <!--Custom stylesheet should always be last-->
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css"> 
     <link rel="stylesheet" href="css/gameHelper.css">
     <title>Blossom Game Helper</title>
 </head>
+
 <body>
     <header>
+        <!--Bootstrap grid w/ no breakpoints set = default responsiveness-->
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -53,28 +55,51 @@
             </div>
         </div>
     </div>
+    <!--Container to hold nested grid for responsive form-->
     <div class="container">
         <div class="row">
-            <div class="col">
+            <!--Form div fullscreen on md & smaller, 10 cols on lg&xl-->
+            <div class="col-12 col-lg-10">
+                <!--Custom CSS styling set on the form element-->
                 <form id="wordSearchForm">
-                    <h2>Blossom Word Search</h2>
-                    <div class="directions" id="directions">
-                        <p>Input today's letters, including the required middle letter and the bonus letter.</p>
+                    <div class="row">
+                        <!--Left (start) margin 4 on md & up-->
+                        <div class="col ms-md-4">
+                            <h2>Blossom Word Search</h2>
+                            <div class="directions" id="directions">
+                                <p>Input today's letters, including the required middle letter and the bonus letter.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="letters">Today's Letters:</label>
-                        <input type="text" id="letters" name="letters" required minlength="7" maxlength="7" size="7">
+
+                    <!--margin-bottom 0, margin-bottom 3 on md & up-->
+                    <div class="row mb-0 mb-md-3">
+                        <!--12 cols xs & s, 3 cols on md & lg, 2 on xl, col-form-label vertically centers label with associated input field, align text end on md & up-->
+                        <label for="letters" class="col-md-3 col-xl-2 col-form-label text-md-end">Today's Letters:</label>
+                        <!--3 cols at all sizes; set to indicate input only for 7 characters-->
+                        <div class="col-3">
+                            <!--form-control for default styling-->
+                            <input type="text" class="form-control" id="letters" name="letters" required minlength="7" maxlength="7">
+                        </div>
                     </div>
-                    <div>
-                        <label for="middle">Middle Letter:</label>
-                        <input type="text" id="middle" name="middle" required maxlength="1" minlength="1" size="1">
+
+                    <div class="row mb-0 mb-md-3">
+                        <label for="middle" class="col-md-3 col-xl-2 col-form-label text-md-end">Middle Letter:</label>
+                        <div class="col-1">
+                            <input type="text" class="form-control" id="middle" name="middle" required maxlength="1" minlength="1">
+                        </div>
                     </div>
-                    <div>
-                        <label for="bonus">Bonus Letter:</label>
-                        <input type="text" id="bonus" name="bonus" required maxlength="1" minlength="1" size="1">
+
+                    <div class="row">
+                        <label for="bonus" class="col-md-3 col-xl-2 col-form-label text-md-end mb-0">Bonus Letter:</label>
+                        <div class="col-1 mb-3">
+                            <input type="text" class="form-control" id="bonus" name="bonus" required maxlength="1" minlength="1">
+                        </div>
                     </div>
-                    <div>
-                        <button type="submit">Submit</button>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </div>
                     </div>
                 </form>
             </div>
